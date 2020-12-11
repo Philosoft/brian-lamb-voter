@@ -29,9 +29,10 @@ class ForbiddenForAdminsVoter extends Voter
     {
         $user = $token->getUser();
 
-        // (!) not real check
+        // (!) not real check bacause of using symfony core user
         if (!($user instanceof User)) {
-            return false;
+            // user is anon, but that's ok
+            return true;
         }
 
         return !in_array(
