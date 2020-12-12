@@ -21,7 +21,7 @@ class ForbiddenForAdminsVoter extends Voter
 
     protected function supports($attribute, $subject)
     {
-        return $attribute === 'DISALLOW_ADMINS';
+        return $attribute === 'SECRET_CAKE';
     }
 
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
@@ -35,7 +35,7 @@ class ForbiddenForAdminsVoter extends Voter
         }
 
         return !in_array(
-            $attribute,
+            'DISALLOW_ADMINS',
             $this->roleHierarchy->getReachableRoleNames($user->getRoles()),
             true
         );

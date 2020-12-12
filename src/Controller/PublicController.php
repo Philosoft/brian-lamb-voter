@@ -32,7 +32,7 @@ class PublicController extends AbstractController
      */
     public function forAllButAdmins(): Response
     {
-        if (!$this->isGranted('DISALLOW_ADMINS')) {
+        if (!$this->isGranted('SECRET_CAKE')) {
             throw new AccessDeniedHttpException('No admins allowed here by isGranted method');
         }
 
