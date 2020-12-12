@@ -15,21 +15,17 @@ class AppAuthenticator extends AbstractGuardAuthenticator
 {
     public function supports(Request $request)
     {
-        return $request->get('role');
+        return $request->get('username');
     }
 
     public function getCredentials(Request $request)
     {
-        return $request->get('role');
+        return $request->get('username');
     }
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-        return new User(
-            'foobar',
-        null,
-            ['ROLE_USER', $credentials]
-        );
+        return $userProvider->loadUserByUsername($credentials);
     }
 
     public function checkCredentials($credentials, UserInterface $user)
