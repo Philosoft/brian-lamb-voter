@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @isGranted("ROLE_ADMIN")
+ * @IsGranted("ROLE_ADMIN")
  */
 class AdminController
 {

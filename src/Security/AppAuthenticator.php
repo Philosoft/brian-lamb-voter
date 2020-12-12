@@ -45,7 +45,7 @@ class AppAuthenticator extends AbstractGuardAuthenticator
 
     public function start(Request $request, AuthenticationException $authException = null)
     {
-        return new Response('Add get-param role to authenticate as fake user. e.g. ?role=ROLE_ADMIN');
+        return new Response('Add get-param role to authenticate as fake user. e.g. ?username=user');
     }
 
     public function supportsRememberMe()
